@@ -1,0 +1,121 @@
+<app-navbar></app-navbar>
+<div class="m-3">
+  <div class="table-responsive">
+    <table class="table table-bordered" dir="rtl">
+      <thead>
+        <th colspan="2" class="alert-success">
+          <h4 class="text-black text-center pt-1">
+            تفاصيل الاستدعاء لوحدات الدم - رقم ({{ (item | async)?.id }})
+          </h4>
+        </th>
+      </thead>
+      <tbody class="text-center">
+        <tr>
+          <td class="w-25 f-19">تاريخ إرسال الاستدعاء</td>
+
+          <td>{{ (item | async)?.date * 1000 | date: "dd/MM/yyyy" }}</td>
+        </tr>
+        <tr>
+          <td class="w-25 f-19">اسم المريض الرباعي</td>
+
+          <td>{{ (item | async)?.nameValue }}</td>
+        </tr>
+
+        <tr>
+          <td class="w-25 f-19">الرقم الوطني للمريض</td>
+
+          <td>{{ (item | async)?.nationalIdValue }}</td>
+        </tr>
+        <tr>
+          <td class="w-25 f-19">تاريخ الميلاد</td>
+
+          <td>{{ (item | async)?.dateValue }}</td>
+        </tr>
+        <tr>
+          <td class="w-25 f-19">جنس المريض</td>
+
+          <td>{{ (item | async)?.genderValue }}</td>
+        </tr>
+
+        <tr>
+          <td class="w-25 f-19">اسم المستشفى التي يتواجد بها المريض</td>
+
+          <td>{{ (item | async)?.hospitalValue }}</td>
+        </tr>
+        <tr>
+          <td class="w-25 f-19">المحافظة التي تتواجد بها المستشفى</td>
+
+          <td>{{ (item | async)?.cityValue }}</td>
+        </tr>
+        <tr>
+          <td class="w-25 f-19">رقم هاتف بنك الدم للمستشفى</td>
+
+          <td>{{ (item | async)?.altPhoneValue }}</td>
+        </tr>
+        <tr>
+          <td class="w-25 f-19">رقم السرير</td>
+
+          <td>{{ (item | async)?.bedValue }}</td>
+        </tr>
+        <tr>
+          <td class="w-25 f-19">رقم الطابق</td>
+
+          <td>{{ (item | async)?.floorValue }}</td>
+        </tr>
+        <tr>
+          <td class="w-25 f-19">زمرة دم المريض</td>
+
+          <td dir="ltr">{{ (item | async)?.patientBloodType }}</td>
+        </tr>
+
+        <tr>
+          <td class="w-25 f-19">زمر(ة) الدم التي يحتاجها المريض</td>
+
+          <td dir="ltr">{{ (item | async)?.bloodTypeValue }}</td>
+        </tr>
+
+        <tr>
+          <td class="w-25 f-19">عدد وحدات الدم التي يحتاجها المريض</td>
+
+          <td>{{ (item | async)?.unitsValue }}</td>
+        </tr>
+
+        <tr>
+          <td class="w-25 f-19">رقم هاتف المريض</td>
+
+          <td>{{ (item | async)?.phoneValue }}</td>
+        </tr>
+
+        <tr>
+          <td class="w-25 f-19">سبب الحاجة لوحدات الدم</td>
+
+          <td>{{ (item | async)?.reasonValue }}</td>
+        </tr>
+
+        <tr>
+          <td class="w-25 f-19">صورة تثبت أمر الطبيب</td>
+
+          <td>
+            <img
+              src="{{ getImageURL((item | async)?.imagePath) }}"
+              alt=""
+              width="400px"
+              height="auto"
+            />
+          </td>
+        </tr>
+
+        <tr>
+          <td class="w-25 f-19">ملاحظات إضافية من المريض</td>
+
+          <td>{{ (item | async)?.notesValue }}</td>
+        </tr>
+        <tr>
+          <td>اسم المشرف الرئيسي الذي قام بالموافقة عليه</td>
+
+          <td>{{ (item | async)?.acceptedBy }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

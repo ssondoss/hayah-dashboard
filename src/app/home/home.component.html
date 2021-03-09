@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+<div class="alert alert-black text-center mt-4 h5 mx-3" dir="rtl">
+  <b></b> أهلا <b>{{ user.username }}</b> في تطبيق حياة
+</div>
+<div class="container">
+  <div class="row justify-content-center" *ngIf="user.role === 'BLOOD_BANK'">
+    <div
+      class="col-md-4 text-center main-div py-5"
+      routerLink="/send-notification"
+    >
+      <i class="fa fa-sign-out fa-2x text-primary"></i>
+      <h3 class="mt-3">إرسال إشعار</h3>
+    </div>
+  </div>
+  <div
+    class="row justify-content-center mt-4"
+    *ngIf="user.role === 'MAIN_ADMIN'"
+  >
+    <div class="col-md-4 text-center main-div py-5" routerLink="/blood-bank">
+      <i class="fa fa-university fa-2x text-primary"></i>
+      <h3 class="mt-3">بنوك الدم</h3>
+    </div>
+    <div
+      class="col-md-4 text-center main-div-2 py-5"
+      routerLink="/request-help"
+    >
+      <i class="fa fa-address-card-o fa-2x text-primary"></i>
+      <h3 class="mt-3">استدعاءات المرضى (الجديدة)</h3>
+    </div>
+  </div>
+  <div
+    class="row justify-content-center mt-4"
+    *ngIf="user.role === 'MAIN_ADMIN'"
+  >
+    <div
+      class="col-md-4 text-center main-div py-5"
+      routerLink="/approved-request-help"
+    >
+      <i class="fa fa-check-square-o fa-2x text-primary"></i>
+      <h3 class="mt-3">استدعاءات المرضى (الموافق عليها)</h3>
+    </div>
+    <div
+      class="col-md-4 text-center main-div-2 py-5"
+      routerLink="/rejected-request-help"
+    >
+      <i class="fa fa-ban fa-2x text-primary"></i>
+      <h3 class="mt-3">(استدعاءات المرضى (المرفوضة</h3>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div
+      class="col-md-4 text-center main-div py-5"
+      (click)="logout()"
+      routerLink="/login"
+    >
+      <i class="fa fa-sign-out fa-2x text-primary"></i>
+      <h3 class="mt-3">تسجيل الخروج</h3>
+    </div>
+    <div
+      class="col-md-4 text-center main-div-2 py-5"
+      routerLink="/notifications"
+    >
+      <i class="fa fa-bell-o fa-2x text-primary"></i>
+      <h3 class="mt-3" *ngIf="user.role === 'MAIN_ADMIN'">
+        إشعارات بنوك الدم المرسلة للمستخدمين
+      </h3>
+      <h3 class="mt-3" *ngIf="user.role === 'BLOOD_BANK'">
+        الإشعارات المرسلة للمستخدمين
+      </h3>
+    </div>
+  </div>
+</div>

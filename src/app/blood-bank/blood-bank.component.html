@@ -1,0 +1,242 @@
+<app-navbar></app-navbar>
+<h3 class="text-center py-4 bg-light mt-0">إضافة حساب لبنك دم</h3>
+
+<div class="mx-4 mt-5">
+  <div class="justify-content-center mb-5">
+    <form action="" dir="rtl" class="row mt-3 mb-5" [formGroup]="formData">
+      <div class="form-group col-md-4 text-right">
+        <label for=""> اسم المستشفى (مع ذكر الفرع إن تواجد) </label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="hospitalName"
+          required
+          maxlength="500"
+        />
+        <mat-error
+          *ngIf="
+            formData.controls.hospitalName.errors?.required &&
+            formData.controls.hospitalName.touched
+          "
+        >
+          هذا الحقل مطلوب
+        </mat-error>
+      </div>
+      <div class="form-group col-md-3 text-right">
+        <label for=""> المحافظة التي تتواجد بها المستشفى </label>
+        <select
+          name=""
+          id=""
+          class="custom-select"
+          formControlName="city"
+          required
+        >
+          <option value="عمان">عمان</option>
+          <option value="إربد">إربد</option>
+          <option value="الكرك">الكرك</option>
+          <option value="معان1">معان</option>
+          <option value="الطفيلة">الطفيلة</option>
+          <option value="العقبة">العقبة</option>
+          <option value="الزرقاء">الزرقاء</option>
+          <option value="جرش">جرش</option>
+          <option value="عجلون">عجلون</option>
+          <option value="السلط">السلط</option>
+          <option value="مادبا">مادبا</option>
+          <option value="البلقاء">البلقاء</option>
+        </select>
+        <mat-error
+          *ngIf="
+            formData.controls.city.errors?.required &&
+            formData.controls.city.touched
+          "
+        >
+          هذا الحقل مطلوب
+        </mat-error>
+      </div>
+      <div class="form-group col-md-3 text-right">
+        <label for="">عنوان المستشفى التفصيلي</label>
+        <textarea
+          class="form-control"
+          rows="2"
+          required
+          maxlength="500"
+          formControlName="hospitalAddress"
+        ></textarea>
+        <mat-error
+          *ngIf="
+            formData.controls.hospitalAddress.errors?.required &&
+            formData.controls.hospitalAddress.touched
+          "
+        >
+          هذا الحقل مطلوب
+        </mat-error>
+      </div>
+      <div class="form-group col-md-2 text-right">
+        <label for=""> رقم الهاتف للبنك ( 1 ) </label>
+        <input
+          type="tel"
+          class="form-control"
+          formControlName="phoneNumber1"
+          required
+          maxlength="10"
+          minlength="6"
+        />
+        <mat-error
+          *ngIf="
+            formData.controls.phoneNumber1.errors?.required &&
+            formData.controls.phoneNumber1.touched
+          "
+        >
+          هذا الحقل مطلوب
+        </mat-error>
+        <mat-error *ngIf="formData.controls.phoneNumber1.hasError('minlength')">
+          يجب أن يحتوي على 6 عناصر أو أكثر
+        </mat-error>
+      </div>
+      <div class="form-group col-md-2 text-right">
+        <label for=""> رقم الهاتف للبنك ( 2 ) </label>
+        <input
+          type="tel"
+          class="form-control"
+          formControlName="phoneNumber2"
+          required
+          maxlength="10"
+          minlength="6"
+        />
+        <mat-error
+          *ngIf="
+            formData.controls.phoneNumber2.errors?.required &&
+            formData.controls.phoneNumber2.touched
+          "
+        >
+          هذا الحقل مطلوب
+        </mat-error>
+        <mat-error *ngIf="formData.controls.phoneNumber2.hasError('minlength')">
+          يجب أن يحتوي على 6 عناصر أو أكثر
+        </mat-error>
+      </div>
+      <div class="form-group col-md-2 text-right">
+        <label for=""> رقم الهاتف للبنك ( 3 ) </label>
+        <input
+          type="tel"
+          class="form-control"
+          formControlName="phoneNumber3"
+          required
+          maxlength="10"
+          minlength="6"
+        />
+        <mat-error
+          *ngIf="
+            formData.controls.phoneNumber3.errors?.required &&
+            formData.controls.phoneNumber3.touched
+          "
+        >
+          هذا الحقل مطلوب
+        </mat-error>
+        <mat-error *ngIf="formData.controls.phoneNumber3.hasError('minlength')">
+          يجب أن يحتوي على 6 عناصر أو أكثر
+        </mat-error>
+      </div>
+
+      <div class="form-group col-md-2 text-right">
+        <label for=""> اسم المستخدم لحساب بنك الدم </label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="username"
+          required
+          maxlength="50"
+          minlength="3"
+        />
+        <mat-error
+          *ngIf="
+            formData.controls.username.errors?.required &&
+            formData.controls.username.touched
+          "
+        >
+          هذا الحقل مطلوب
+        </mat-error>
+        <mat-error *ngIf="formData.controls.username.hasError('minlength')">
+          يجب أن يحتوي على 3 عناصر أو أكثر
+        </mat-error>
+      </div>
+      <div class="form-group col-md-2 text-right">
+        <label for=""> كلمة السر لحساب بنك الدم </label>
+        <input
+          type="password"
+          class="form-control"
+          formControlName="password"
+          required
+          maxlength="50"
+          minlength="3"
+        />
+        <mat-error
+          *ngIf="
+            formData.controls.password.errors?.required &&
+            formData.controls.password.touched
+          "
+        >
+          هذا الحقل مطلوب
+        </mat-error>
+        <mat-error *ngIf="formData.controls.password.hasError('minlength')">
+          يجب أن تحتوي على 3 عناصر أو أكثر
+        </mat-error>
+      </div>
+      <div class="form-group col-md-2 text-center">
+        <button
+          class="btn btn-primary mt-30px w-75 py-2"
+          type="button"
+          (click)="add()"
+        >
+          إضافة
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-bordered" dir="rtl">
+      <thead class="text-center bg-light">
+        <th>اسم المستشفى</th>
+        <th>المحافظة</th>
+        <th>عنوان المستشفى التفصيلي</th>
+        <th>رقم الهاتف(1)</th>
+        <th>رقم الهاتف(2)</th>
+        <th>رقم الهاتف(3)</th>
+        <th>اسم المستخدم</th>
+        <th>كلمة السر</th>
+        <th>تعديل</th>
+        <th>حذف</th>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let bloodBank of BloodBanksValues | async">
+          <td>{{ bloodBank.hospitalName }}</td>
+          <td>{{ bloodBank.city }}</td>
+          <td>{{ bloodBank.hospitalAddress }}</td>
+          <td>{{ bloodBank.phoneNumber1 }}</td>
+          <td>{{ bloodBank.phoneNumber2 }}</td>
+          <td>{{ bloodBank.phoneNumber3 }}</td>
+          <td>{{ bloodBank.username }}</td>
+          <td>{{ bloodBank.password }}</td>
+          <td>
+            <a
+              [routerLink]="['/edit-blood-bank']"
+              [queryParams]="{ bank: bloodBank.username }"
+              rel="noopener noreferrer"
+            >
+              <i
+                class="fa fa-pencil-square-o t-25 text-success"
+                aria-hidden="true"
+              ></i
+            ></a>
+          </td>
+          <td>
+            <i
+              class="fa fa-trash t-25 text-danger"
+              (click)="delete(bloodBank.username)"
+            ></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<nav dir="rtl" class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="#"
+    ><img src="../../assets/logo.png" alt="" height="50" width="auto"
+  /></a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent-333"
+    aria-controls="navbarSupportedContent-333"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <i class="fa fa-bars px-2 py-1 text-black" aria-hidden="true"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+    <ul class="navbar-nav mr-auto top-ul pt-1">
+      <li class="nav-item active text-right">
+        <a class="nav-link" routerLink="/"
+          >الصفحة الرئيسية
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+
+      <li class="nav-item dropdown" *ngIf="user.role === 'MAIN_ADMIN'">
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          استدعاءات المرضى لطلب وحدات الدم
+        </a>
+        <div class="dropdown-menu text-right" aria-labelledby="navbarDropdown">
+          <a
+            class="dropdown-item py-3 border-bottom"
+            routerLink="/request-help"
+          >
+            استدعاءات المرضى (الجديدة)
+          </a>
+
+          <a
+            class="dropdown-item py-3 border-bottom"
+            routerLink="/approved-request-help"
+            >استدعاءات المرضى (الموافق عليها)
+          </a>
+
+          <a class="dropdown-item py-3" routerLink="/rejected-request-help"
+            >استدعاءات المرضى (المرفوضة)
+          </a>
+        </div>
+      </li>
+      <li class="nav-item" *ngIf="user.role === 'MAIN_ADMIN'">
+        <a class="nav-link" routerLink="/blood-bank"> بنوك الدم</a>
+      </li>
+      <li class="nav-item" *ngIf="user.role === 'BLOOD_BANK'">
+        <a class="nav-link" routerLink="/send-notification"> ارسال طلب </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/notifications">
+          إشعارات بنوك الدم المرسلة للمستخدمين
+        </a>
+      </li>
+
+      <li class="nav-item" (click)="logout()">
+        <a class="nav-link"> تسجيل الخروج</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons"></ul>
+  </div>
+</nav>

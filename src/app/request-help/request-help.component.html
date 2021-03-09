@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<h3 class="text-center py-4 bg-light mt-0">استدعاءات المرضى لوحدات دم</h3>
+
+<div class="mx-4 mt-5">
+  <div class="justify-content-center mb-5"></div>
+  <div class="table-responsive">
+    <table class="table table-bordered" dir="rtl">
+      <thead class="text-center bg-light">
+        <th>اسم المريض الرباعي</th>
+        <th>تاريخ الميلاد</th>
+        <th>الرقم الوطني</th>
+        <th>المستشفى التي يتعالج بها</th>
+        <th>زمرة دم المريض</th>
+        <th>عدد وحدات الدم المطلوبة</th>
+        <th>التفاصيل</th>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let request of requests | async">
+          <td>{{ request.nameValue }}</td>
+          <td>{{ request.dateValue * 1000 | date: "dd/MM/yyyy" }}</td>
+          <td>{{ request.nationalIdValue }}</td>
+          <td>{{ request.hospitalValue }}</td>
+          <td dir="ltr">{{ request.bloodTypeValue }}</td>
+          <td>{{ request.unitsValue }}</td>
+          <td>
+            <a
+              [routerLink]="['/request-help-details']"
+              [queryParams]="{ id: request.id }"
+              rel="noopener noreferrer"
+            >
+              <i class="fa fa-eye t-25 text-success" aria-hidden="true"></i
+            ></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

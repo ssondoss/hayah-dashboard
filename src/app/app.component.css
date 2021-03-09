@@ -1,0 +1,109 @@
+.text-black {
+  color: #000000 !important;
+}
+.text-white {
+  color: #ffffff !important;
+}
+.text-primary {
+  color: #8675a9 !important;
+}
+div {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.bg-light-pink {
+  background-color: #ecd3d331 !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+.bg-primary {
+  background-color: #8675a9 !important;
+}
+.bg-light {
+  background-color: #ebe9e9 !important;
+}
+.btn-primary {
+  background-color: #8675a9 !important;
+  color: #ffffff !important ;
+  border: 1px solid #8675a9 !important;
+}
+.btn-primary:hover {
+  background-color: #675688 !important;
+  color: #ffffff !important ;
+}
+.btn-primary:focus {
+  background-color: #675688 !important;
+  color: #ffffff !important ;
+  border: 1px solid #675688 !important;
+  box-shadow: none !important;
+}
+.mt-30px {
+  margin-top: 30px !important;
+}
+.bg-black {
+  background-color: #000000 !important;
+}
+mat-error {
+  margin-top: 10px !important;
+  font-size: 15px !important;
+  color: #d34444 !important;
+}
+.border-bottom-primary {
+  border-bottom: 1px solid #8675a9;
+}
+.t-25 {
+  font-size: 25px !important;
+}
+form {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif !important;
+}
+
+.text-danger:hover {
+  color: #a31818 !important;
+}
+.text-danger:focus {
+  border: none !important;
+  color: #a31818 !important;
+}
+.text-success:hover {
+  color: #1c7728 !important;
+}
+.text-success:focus {
+  color: #1c7728 !important;
+}
+.bg-light {
+  background-color: #8675a91c !important;
+}
+h3 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+table {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif !important;
+}
+
+.f-19 {
+  font-size: 17px !important;
+}
+.border-primary {
+  border: 2px solid #8675a9 !important;
+}
+.alert-black {
+  border: 1px solid #574b70;
+  height: auto !important;
+  width: auto !important;
+  background-color: #574b7015;
+}
+label {
+  font-size: 17px !important;
+}
+@media screen and (max-width: 769px) {
+  .t-19 {
+    font-size: 17px !important;
+  }
+
+  .f-19 {
+    font-size: 17px !important;
+  }
+}
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif !important;
+}

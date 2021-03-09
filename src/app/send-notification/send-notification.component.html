@@ -1,0 +1,315 @@
+<app-navbar></app-navbar>
+<h3 class="text-center py-4 bg-light mt-0">
+  إرسال إشعار للمستخدمين لطلب وحدات دم
+</h3>
+
+<div class="mx-4">
+  <div class="justify-content-center mb-5">
+    <form action="" dir="rtl" class="mt-3 mb-5" [formGroup]="formData">
+      <div class="row">
+        <div class="form-group mt-4 col-lg-4 text-right">
+          <label for=""> اسم المستشفى (مع ذكر الفرع إن تواجد) </label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="hospitalName"
+            required
+            maxlength="250"
+          />
+          <mat-error
+            *ngIf="
+              formData.controls.hospitalName.errors?.required &&
+              formData.controls.hospitalName.touched
+            "
+          >
+            هذا الحقل مطلوب
+          </mat-error>
+        </div>
+        <div class="form-group mt-4 col-lg-3 text-right">
+          <label for=""> المحافظة التي تتواجد بها المستشفى </label>
+          <select
+            name=""
+            id=""
+            class="custom-select"
+            formControlName="city"
+            required
+          >
+            <option value="عمان">عمان</option>
+            <option value="إربد">إربد</option>
+            <option value="الكرك">الكرك</option>
+            <option value="1معان">معان</option>
+            <option value="الطفيلة">الطفيلة</option>
+            <option value="العقبة">العقبة</option>
+            <option value="الزرقاء">الزرقاء</option>
+            <option value="جرش">جرش</option>
+            <option value="عجلون">عجلون</option>
+            <option value="السلط">السلط</option>
+            <option value="مادبا">مادبا</option>
+            <option value="البلقاء">البلقاء</option>
+          </select>
+          <mat-error
+            *ngIf="
+              formData.controls.city.errors?.required &&
+              formData.controls.city.touched
+            "
+          >
+            هذا الحقل مطلوب
+          </mat-error>
+        </div>
+        <div class="form-group mt-4 col-lg-3 text-right">
+          <label>عنوان المستشفى التفصيلي</label>
+          <textarea
+            class="form-control"
+            rows="2"
+            formControlName="hospitalAddress"
+          ></textarea>
+          <mat-error
+            *ngIf="
+              formData.controls.hospitalAddress.errors?.required &&
+              formData.controls.hospitalAddress.touched
+            "
+          >
+            هذا الحقل مطلوب
+          </mat-error>
+        </div>
+        <div class="form-group mt-4 col-lg-2 text-right">
+          <label for=""> رقم الهاتف للبنك ( 1 ) </label>
+          <input
+            type="tel"
+            class="form-control"
+            formControlName="phoneNumber1"
+            required
+            maxlength="10"
+            minlength="6"
+          />
+          <mat-error
+            *ngIf="
+              formData.controls.phoneNumber1.errors?.required &&
+              formData.controls.phoneNumber1.touched
+            "
+          >
+            هذا الحقل مطلوب
+          </mat-error>
+          <mat-error
+            *ngIf="formData.controls.phoneNumber1.hasError('minlength')"
+          >
+            يجب أن يحتوي على 6 عناصر أو أكثر
+          </mat-error>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group mt-4 col-lg-2 text-right">
+          <label for=""> رقم الهاتف للبنك ( 2 ) </label>
+          <input
+            type="tel"
+            class="form-control"
+            formControlName="phoneNumber2"
+            required
+            maxlength="10"
+            minlength="6"
+          />
+          <mat-error
+            *ngIf="
+              formData.controls.phoneNumber2.errors?.required &&
+              formData.controls.phoneNumber2.touched
+            "
+          >
+            هذا الحقل مطلوب
+          </mat-error>
+          <mat-error
+            *ngIf="formData.controls.phoneNumber2.hasError('minlength')"
+          >
+            يجب أن يحتوي على 6 عناصر أو أكثر
+          </mat-error>
+        </div>
+        <div class="form-group mt-4 col-lg-2 text-right">
+          <label for=""> رقم الهاتف للبنك ( 3 ) </label>
+          <input
+            type="tel"
+            class="form-control"
+            formControlName="phoneNumber3"
+            required
+            maxlength="10"
+            minlength="6"
+          />
+
+          <mat-error
+            *ngIf="
+              formData.controls.phoneNumber3.errors?.required &&
+              formData.controls.phoneNumber3.touched
+            "
+          >
+            هذا الحقل مطلوب
+          </mat-error>
+          <mat-error
+            *ngIf="formData.controls.phoneNumber3.hasError('minlength')"
+          >
+            يجب أن يحتوي على 6 عناصر أو أكثر
+          </mat-error>
+        </div>
+
+        <div class="form-group mt-4 col-lg-2 text-right">
+          <label for="">عدد وحدات الدم المحتاجة</label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="bloodUnitsCount"
+            required
+          />
+          <mat-error
+            *ngIf="
+              formData.controls.bloodUnitsCount.errors?.required &&
+              formData.controls.bloodUnitsCount.touched
+            "
+          >
+            هذا الحقل مطلوب
+          </mat-error>
+        </div>
+
+        <div class="form-group mt-4 text-right col-lg-6 w-100">
+          <label class="ml-4"> زمرة الدم المحتاجة</label>
+          <div class="row">
+            <div class="col-lg-2">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  value="all"
+                  (change)="selectAll()"
+                  id="all"
+                />
+                <label class="form-check-label mr-4" for="defaultCheck1">
+                  اختيار الكل
+                </label>
+              </div>
+            </div>
+            <div class="col-lg-2">
+              <div class="form-check">
+                <input
+                  [checked]="o_plus"
+                  class="form-check-input"
+                  type="checkbox"
+                  formControlName="op"
+                  value="Oplus"
+                  id="Oplus"
+                />
+                <label class="form-check-label mr-4" for="defaultCheck1">
+                  + O
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  [checked]="o_minus"
+                  class="form-check-input"
+                  type="checkbox"
+                  value="Ominus"
+                  formControlName="om"
+                  id="Ominus"
+                />
+                <label class="form-check-label mr-4"> - O </label>
+              </div>
+            </div>
+            <div class="col-lg-2">
+              <div class="form-check">
+                <input
+                  [checked]="a_plus"
+                  class="form-check-input"
+                  type="checkbox"
+                  value="Aplus"
+                  formControlName="ap"
+                  id="Aplus"
+                />
+                <label class="form-check-label mr-4" for="defaultCheck1">
+                  + A
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  [checked]="a_minus"
+                  class="form-check-input"
+                  type="checkbox"
+                  value="Aminus"
+                  formControlName="am"
+                  id="Aminus"
+                />
+                <label class="form-check-label mr-4"> - A</label>
+              </div>
+            </div>
+            <div class="col-lg-2">
+              <div class="form-check">
+                <input
+                  [checked]="b_plus"
+                  class="form-check-input"
+                  type="checkbox"
+                  value="Oplus"
+                  formControlName="bp"
+                  id="Bplus"
+                />
+                <label class="form-check-label mr-4" for="defaultCheck1">
+                  + B
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  [checked]="b_minus"
+                  class="form-check-input"
+                  type="checkbox"
+                  formControlName="bm"
+                  value="Ominus"
+                  id="Bminus"
+                />
+                <label class="form-check-label mr-4"> - B </label>
+              </div>
+            </div>
+            <div class="col-lg-2">
+              <div class="form-check">
+                <input
+                  [checked]="ab_plus"
+                  class="form-check-input"
+                  type="checkbox"
+                  value="Oplus"
+                  formControlName="abp"
+                  id="ABplus"
+                />
+                <label class="form-check-label mr-4" for="defaultCheck1">
+                  + AB
+                </label>
+              </div>
+              <div class="form-check">
+                <input
+                  [checked]="ab_minus"
+                  class="form-check-input"
+                  type="checkbox"
+                  value="Ominus"
+                  formControlName="abm"
+                  id="ABminus"
+                />
+                <label class="form-check-label mr-4"> - AB </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-lg-4 mt-4 text-right">
+          <label for=""> ملاحظات إضافية </label>
+          <textarea
+            type="text"
+            class="form-control"
+            formControlName="notes"
+            rows="2"
+          ></textarea>
+        </div>
+        <div class="form-group mt-4 col-lg-2 text-center">
+          <button
+            class="btn btn-primary mt-30px w-75 py-2"
+            type="button"
+            (click)="add()"
+          >
+            إضافة
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

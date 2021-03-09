@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "hayah-28356"
+  },
+  "targets": {
+    "hayah-28356": {
+      "hosting": {
+        "hayah-admin-panel": [
+          "hayah-28356"
+        ]
+      }
+    }
+  }
+}

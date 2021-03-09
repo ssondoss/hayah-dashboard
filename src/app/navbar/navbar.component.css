@@ -1,0 +1,50 @@
+.nav-link {
+  color: #000000 !important;
+  margin-right: 25px !important;
+  margin-left: 5px !important;
+  font-size: 18px;
+  font-weight: 600 !important;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.nav-link:hover {
+  color: #7c7a7a !important;
+  display: block !important;
+}
+nav {
+  background-color: #d4d1d12d !important;
+  border-bottom: 1px solid #8675a9 !important;
+}
+
+@media screen and (max-width: 769px) {
+  .nav-link {
+    padding-right: 0px !important;
+    margin-right: 0px !important;
+    text-align: right !important;
+  }
+  ul {
+    padding-right: 0px !important;
+    margin-right: 0px !important;
+  }
+  .top-ul {
+    margin-top: 10px !important;
+  }
+  li .nav-link {
+    font-size: 17px !important;
+  }
+  .dropdown-menu .dropdown-item {
+    font-size: 16px !important;
+  }
+  .t-19 {
+  }
+}
+.dropdown-menu {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.dropdown-menu a {
+  font-size: 17px !important;
+  font-weight: bold !important;
+}
+.dropdown-menu a:hover {
+  background-color: #8675a92c !important;
+}

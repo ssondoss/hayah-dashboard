@@ -1,0 +1,73 @@
+<app-navbar></app-navbar>
+<h3 class="text-center py-4 bg-light mt-0">
+  الإشعارات المرسلة للمستخدمين من بنوك الدم
+</h3>
+
+<div class="mx-2 mt-2">
+  <!-- <div
+    class="row mx-0 my-5 justify-content-right"
+    dir="rtl"
+    *ngIf="user.role === 'MAIN_ADMIN'"
+  >
+    <div class="form-group col-md-2 text-right">
+      <label for=""> المحافظة</label>
+      <select
+        name=""
+        id=""
+        class="custom-select"
+        (change)="getByCity($event.target.value)"
+      >
+        <option value="عمان">عمان</option>
+        <option value="إربد">إربد</option>
+        <option value="الكرك">الكرك</option>
+        <option value="معان1">معان</option>
+        <option value="الطفيلة">الطفيلة</option>
+        <option value="العقبة">العقبة</option>
+        <option value="الزرقاء">الزرقاء</option>
+        <option value="جرش">جرش</option>
+        <option value="عجلون">عجلون</option>
+        <option value="السلط">السلط</option>
+        <option value="مادبا">مادبا</option>
+        <option value="البلقاء">البلقاء</option>
+      </select>
+    </div>
+
+   
+  </div> -->
+
+  <div class="mx-4 mt-5">
+    <div class="justify-content-center mb-5"></div>
+    <div class="table-responsive">
+      <table class="table table-bordered" dir="rtl">
+        <thead class="text-center bg-light">
+          <th>اسم المستشفى</th>
+          <th>المحافطة التي تتواجد بها</th>
+          <th>زمر(ة) الدم المطلوبة</th>
+          <th>عدد وحدات الدم المطلوبة</th>
+          <th> المرسل</th>
+
+          <th>التفاصيل</th>
+        </thead>
+        <tbody class="text-center">
+          <tr *ngFor="let request of requests | async">
+            <td>{{ request.hospitalValue }}</td>
+            <td>{{ request.cityValue }}</td>
+            <td>{{ request.bloodTypeValue }}</td>
+            <td>{{ request.unitsValue }}</td>
+            <td>{{ request.hospitalUsername }}</td>
+
+            <td>
+              <a
+                [routerLink]="['/notification-details']"
+                [queryParams]="{ id: request.id }"
+                rel="noopener noreferrer"
+              >
+                <i class="fa fa-eye t-25 text-success" aria-hidden="true"></i
+              ></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

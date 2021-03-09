@@ -1,0 +1,14 @@
+.border-top-black {
+  border-top: 2px solid #000000 !important;
+  width: 100px !important;
+}
+.bg-light {
+  background-color: #8675a927 !important;
+}
+.f-19 {
+  font-size: 19px !important;
+}
+
+table {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
